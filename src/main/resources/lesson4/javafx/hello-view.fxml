@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="lesson4.javafx.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="lesson4.javafx.HelloController">
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+        <top>
+            <Label text="Это наш волшебный чат"/>
+        </top>
+
+        <center>
+            <TextArea fx:id="Chat" editable="false" promptText="Здесь будут ваши сообщения"/>
+        </center>
+
+        <bottom>
+            <HBox>
+                <TextField fx:id="textMassage" prefWidth="240" promptText="Поле для ввода сообщения" onAction="#sendMassageBtn"/>
+                <Button text="Отправить" onAction="#sendMassageBtn"/>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
