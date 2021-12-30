@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.TextField?>
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lesson4.javafx.HelloController">
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
+<BorderPane stylesheets="/Style.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lesson4.javafx.HelloController">
         <top>
-            <Label text="Это наш волшебный чат"/>
+            <Label text="Это наш волшебный чат!" textAlignment="CENTER" BorderPane.alignment="TOP_CENTER" />
         </top>
 
         <center>
-            <TextArea fx:id="Chat" editable="false" promptText="Здесь будут ваши сообщения"/>
+            <TextArea fx:id="Chat" editable="false"/>
         </center>
 
         <bottom>
             <HBox>
-                <TextField fx:id="textMassage" prefWidth="240" promptText="Поле для ввода сообщения" onAction="#sendMassageBtn"/>
-                <Button text="Отправить" onAction="#sendMassageBtn"/>
+                <TextField fx:id="textMassage" minWidth="400" onAction="#sendMassageBtn" promptText="Поле для ввода сообщения" />
+                <Button onAction="#sendMassageBtn" text="Отправить" />
             </HBox>
         </bottom>
 
     </BorderPane>
-
