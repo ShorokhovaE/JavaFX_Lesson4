@@ -1,14 +1,21 @@
 package lesson4.javafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    public TextField textMassage;
+    @FXML
+    public TextArea Chat;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void sendMassageBtn(ActionEvent actionEvent) {
+        Chat.appendText(textMassage.getText() + "\n");
+        textMassage.clear();
+        textMassage.requestFocus();
     }
 }
